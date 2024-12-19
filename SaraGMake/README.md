@@ -35,7 +35,7 @@ Snakemake_Blastocystis/
     data/Raw/: Add your raw .fastq data files here. 🧬
     scripts/: Extract and add the script files from the .zip here. 📂
     results/: This directory will store the output files. 📊
-    Snakemake Workflow: Place the Snakemake .smk file (your pipeline) here. 💼
+    Snakemake Workflow: Place the Snakemake designed as "snakefile" here. 💼
 ```
 ### 3️⃣ How to Run the Pipeline in the Terminal 🖥️
 
@@ -60,3 +60,11 @@ Simply run the following command to execute the pipeline:
 snakemake --cores 4
 
 This will execute the pipeline using 4 cores (adjust the number of cores based on your machine’s capacity). 🚀
+```
+### 4️⃣ Results 🎉
+
+🔹 If everything worked accordingly the excel file with the subtypes is diplayed inside the "parsid" folder
+
+🔹 The polished sequences are on the "polished" folder
+
+
