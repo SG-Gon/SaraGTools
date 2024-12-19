@@ -2,8 +2,6 @@
 
 Welcome to **SaraGMake**! 🌿 This Snakemake pipeline is designed for subtyping *Blastocystis sp.* from Oxford Nanopore Technologies (ONT) raw sequencing reads. 💻🔬
 
----
-
 ## 📝 **Instructions**
 
 Before you begin, make sure that **Bioconda** is already installed on your system. 🛠️
@@ -16,8 +14,7 @@ Run the `Installation_snakemake.bash` script to automatically install all the ne
 bash Installation_snakemake.bash
 
 
-
-## 2️⃣ **Prepare Your Experiment Directory** 📁
+### 2️⃣ **Prepare Your Experiment Directory** 📁
 
 Create a directory for your experiment. For example, name it `Snakemake_Blastocystis`: 🗂️
 
