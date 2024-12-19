@@ -1,4 +1,4 @@
-# ✨ Welcome to SaraGTool ✨
+# ✨ Welcome to SaraGTools ✨
 
 Welcome to SaraGTool! 🛠️ This repository is a compilation of various bioinformatics tools designed for working with raw Oxford Nanopore Technologies (ONT) sequencing reads. 📊🌿 It's optimized for Ubuntu systems and will help you process and analyze your ONT data with ease! 💻🔬
 
