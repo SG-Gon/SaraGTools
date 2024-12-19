@@ -17,6 +17,7 @@ bash Installation_snakemake.bash
 
 Create a directory for your experiment. For example, name it Snakemake_Blastocystis: 🗂️
 ```bash
+
 mkdir Snakemake_Blastocystis
 cd Snakemake_Blastocystis
 
