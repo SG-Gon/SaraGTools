@@ -1,11 +1,10 @@
 # ✨ Welcome to SaraGTool ✨
 
 Welcome to SaraGTool! 🛠️ This repository is a compilation of various bioinformatics tools designed for working with raw Oxford Nanopore Technologies (ONT) sequencing reads. 📊🌿 It's optimized for Ubuntu systems and will help you process and analyze your ONT data with ease! 💻🔬
-🧬 About SaraGMake 🧬
 
 Within SaraGTool, you’ll find: 
 
-## 🦠 SaraGMake: A powerful Snakemake pipeline specifically designed for subtyping _Blastocystis_ sp. from ONT raw reads. ✨
+## 🧬 SaraGMake 🧬 A powerful Snakemake pipeline specifically designed for subtyping _Blastocystis_ sp. from ONT raw reads. ✨
 
 This tool automates the process of subtyping, making it easy to handle your ONT data and produce high-quality results. The pipeline uses Snakemake, an efficient workflow system for scalable data analysis. 🚀💾
 
