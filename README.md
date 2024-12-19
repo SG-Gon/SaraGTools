@@ -29,6 +29,10 @@ SaraPolish automates the Racon polishing process, improving the quality of your 
 
 SaraSid facilitates the use of PARSID (a tool for phylogenetic analysis of microbial diversity) by automating the workflow. It helps in processing and analyzing your ONT reads to classify based on a custom database efficiently. SaraSid integrates PARSID into your pipeline, allowing for easy subtyping and classification of your data.
 
+### 🔹 SaraTroid - Loop for vsearch to Make Centroids 🔬
+
+SaraTroid uses vsearch to cluster your raw ONT reads into centroids. This tool automates the process of generating representative sequences (centroids) from a set of sequences, which is essential for taxonomic classification and further analysis. By using vsearch, SaraTroid simplifies the process of grouping similar sequences, improving the efficiency of your analysis pipeline.
+
 # 📝 Instructions 📖
 
 All instructions for using the tools are located inside their respective folders. Each folder includes a README.md with detailed instructions on how to use the programs on that specific folder. 📂
