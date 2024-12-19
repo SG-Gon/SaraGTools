@@ -16,10 +16,12 @@ Run the `Installation_snakemake.bash` script to automatically install all the ne
 bash Installation_snakemake.bash
 
 
+
 ### 2️⃣ **Prepare Your Experiment Directory** 📁
 
-Create a directory for your experiment. For example, name it Snakemake_Blastocystis: 🗂️
+Create a directory for your experiment. For example, name it `Snakemake_Blastocystis`: 🗂️
 
+```bash
 mkdir Snakemake_Blastocystis
 cd Snakemake_Blastocystis
 
