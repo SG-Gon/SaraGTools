@@ -7,17 +7,15 @@ Welcome to **SaraGMake**! 🌿 This Snakemake pipeline is designed for subtyping
 Before you begin, make sure that **Bioconda** is already installed on your system. 🛠️
 
 ### 1️⃣ **Install Prerequisites** ⚙️
-
 Run the `Installation_snakemake.bash` script to automatically install all the necessary prerequisites for using the Snakemake pipeline. 🎉
 
 ```bash
 bash Installation_snakemake.bash
+```
 
+### 2️⃣ Prepare Your Experiment Directory 📁
 
-### 2️⃣ **Prepare Your Experiment Directory** 📁
-
-Create a directory for your experiment. For example, name it `Snakemake_Blastocystis`: 🗂️
-
+Create a directory for your experiment. For example, name it Snakemake_Blastocystis: 🗂️
 ```bash
 mkdir Snakemake_Blastocystis
 cd Snakemake_Blastocystis
@@ -37,13 +35,14 @@ Snakemake_Blastocystis/
     scripts/: Extract and add the script files from the .zip here. 📂
     results/: This directory will store the output files. 📊
     Snakemake Workflow: Place the Snakemake .smk file (your pipeline) here. 💼
-
-**🚀 How to Run the Pipeline in the Terminal 🖥️**
+```
+### 3️⃣ How to Run the Pipeline in the Terminal 🖥️
 
     Navigate to the Snakemake Directory 🔍
 
 Change to the directory where your Snakemake workflow is located:
 
+```bash
 cd /path/to/Snakemake_Blastocystis
 
     Run Snakemake 🚦
@@ -52,18 +51,11 @@ Simply run the following command to execute the pipeline:
 
 snakemake --cores 4
 
-This will execute the pipeline using 4 cores (adjust the number of cores based on your machine’s capacity). ⚡
+This will execute the pipeline using 4 cores (adjust the number of cores based on your machine’s capacity). 🚀
+
+
+Simply run the following command to execute the pipeline:
+
 snakemake --cores 4
 
-This will execute the pipeline using 4 cores (adjust the number of cores based on your machine’s capacity).
-Additional Notes
-
-    Ensure that you have all necessary permissions and the environment set up before running the script.
-    If you face any issues, feel free to open an issue on this repository for support!
-
-
-
-
-
-
- 
+This will execute the pipeline using 4 cores (adjust the number of cores based on your machine’s capacity). 🚀
