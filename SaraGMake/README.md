@@ -17,7 +17,7 @@ bash Installation_snakemake.bash
 
 
 
-### 2️⃣ **Prepare Your Experiment Directory** 📁
+## 2️⃣ **Prepare Your Experiment Directory** 📁
 
 Create a directory for your experiment. For example, name it `Snakemake_Blastocystis`: 🗂️
 
