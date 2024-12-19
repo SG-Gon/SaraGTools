@@ -10,18 +10,37 @@ from operator import itemgetter
 import os
 import glob
 
+# ASCII art for success
+ascii_art_success = """
+⣤⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⡿⣿⣇⠀⠀⠀⠀
+⣿⢏⣹⣳⣯⣗⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⡿⠃⠒⣜⣮⢧⡀⠀⠀
+⣿⡞⠁⡉⠙⠻⣷⣿⢦⣤⣤⣶⣶⣶⣶⣶⣶⣾⣿⡿⠋⠀⠌⡐⠈⢿⣿⣣⠀⠀
+⣿⠀⢂⠐⡁⢂⣬⣿⣿⢫⠉⠀⠀⠀⠀⠀⠀⠜⡹⢿⣿⣿⣶⣶⣤⣈⣿⣷⣗⠀
+⡇⢀⣦⣼⣾⣿⣿⣿⡭⡃⠌⠀⠀⠀⠀⠀⠀⠀⠑⡹⣚⢿⣿⣿⣿⣿⣿⣿⣼⠀
+⣿⣿⣿⣿⣿⣟⢧⢃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠉⢎⠳⢯⡟⣿⣻⢿⣯⡷
+⣿⣿⡿⣟⡿⡓⢎⠂⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⣰⣬⣧⡝⢊⠙⣷
+⠟⢧⠛⠥⠃⢉⠀⣴⣾⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⠀⠀⢸
+⠈⠄⡈⠤⣁⠢⡀⢿⣿⣿⣿⠃⠀⠀⠀⠀⢠⡄⠀⣴⠀⠀⡀⢙⢛⡛⠭⢠⠃⢆
+⠐⡠⢑⡒⡄⠓⡌⣌⢩⣩⠷⠶⣤⠀⠀⠀⠀⠳⠾⠃⢀⢸⡼⠋⠋⠛⢦⡃⠞⡠
+⢀⠱⡈⢖⡈⢣⠜⣠⠟⠀⠀⠀⠀⢳⡄⠀⠀⠀⠀⠀⠐⣾⠁⠀⠀⠀⠈⢧⢣⢸
+⣆⠠⢑⠢⣉⠆⢼⡟⠀⠀⠀⠀⠀⠈⣷⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠈⣷⢯
+⡏⠀⠀⢁⠂⢌⡟⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠈⣗⠀⠀⠀⠀⠀⠀⠈⢯
+⠀⠀⠀⠀⠀⠋⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⢿⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡇⠀⠀⠀⠀⠀⠀⠘⣷⠀⠀
+"""  # your success ASCII art
+
 # USER VARIABLES
-input_directory = input("Insert directory containing 'polished' files: ")  # directory with polished files
+input_directory = input("Insert directory containing your files: ")  # directory with centroid files
 output_directory = input("Insert directory to save output files (or press Enter for default 'output_files'): ") or 'output_files'
 ref_library = "ref_library"  # fixed library name
 cutoff_pident = 98  # fixed percent identity cut-off in BLAST
-intersp_div = 100  # fixed interspecific divergence
+intersp_div = 98  # fixed interspecific divergence
 
 # Create the output directory if it does not exist
 os.makedirs(output_directory, exist_ok=True)
 
-# Process each polished file
-for input_file in glob.glob(os.path.join(input_directory, "polished_*.fasta")):
+# Process each centroid file
+for input_file in glob.glob(os.path.join(input_directory, "*.fasta")):
     print(f"Processing file: {input_file} against reference library: {ref_library}.fasta")
 
     # SECOND STEP: run the local BLAST
@@ -54,7 +73,7 @@ for input_file in glob.glob(os.path.join(input_directory, "polished_*.fasta")):
     # Load the blast result list into a DataFrame
     df = pd.DataFrame(best_blasts, columns=("query", "%id", "best_match", "%qcov", "qlen", "slen", "aln_len", "evalue"))
 
-    print("Parsing completed!")
+
 
     # Load additional info from Check_tags.csv if it exists
     path = "./Check_tags.csv"
@@ -137,7 +156,7 @@ for input_file in glob.glob(os.path.join(input_directory, "polished_*.fasta")):
     })
 
     # FIFTH STEP: Excel with results creation
-    excel_output_file = os.path.join(output_directory, os.path.basename(input_file).replace("polished_", "Results_").replace(".fasta", ".xlsx"))  # Save in new directory
+    excel_output_file = os.path.join(output_directory, os.path.basename(input_file).replace("centroid_", "Results_").replace(".fasta", ".xlsx"))  # Save in new directory
     with pd.ExcelWriter(excel_output_file) as writer:
         df.to_excel(writer, index=False, sheet_name="Best_blast")
         df_to_check.to_excel(writer, index=False, sheet_name="Results_to_check")
@@ -156,3 +175,5 @@ for input_file in glob.glob(os.path.join(input_directory, "polished_*.fasta")):
         worksheet1.set_column("D:D", None, format1)
         worksheet1.set_column("H:H", None, format2)  # evalue in scientific format
 
+    print("Parsing completed!")
+    print(ascii_art_success)
