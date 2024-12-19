@@ -33,7 +33,7 @@ Run the following command:
 makeblastdb -in ref_library -parse_seqids -out ref_library -dbtype nucl
 
     -in: Input your FASTA file.
-    -out: This will specify the output database name.
+    -out: This will specify the output database name and need to be MANDATORY ref_library.
     -dbtype nucl: This indicates the type of the database (for nucleotide sequences).
 
 Ensure SaraSID and Database Are in the Same Directory 💾
